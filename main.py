@@ -14,9 +14,7 @@ PARAMETERS = {
 
 response = requests.get(url=weather_endpoint,params=PARAMETERS)
 data = response.json()
-# print(data)
 will_rain = False
-weather_ids = []
 for hour_data in data["list"]:
     condition_code=(hour_data["weather"][0]["id"])
     if condition_code < 700:
